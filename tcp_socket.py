@@ -5,7 +5,7 @@ def tcp_socket_send(ip, port):
     data = ''
     tcp_message = "GET / HTTP/1.1\r\nhost: www.example.com\r\n\r\n"
     tcp_sessions = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    tcp_sessions.settimeout(1)
+    tcp_sessions.settimeout(2)
     tcp_sessions.connect((ip, port))
     tcp_sessions.send(tcp_message.encode())
     while True:
